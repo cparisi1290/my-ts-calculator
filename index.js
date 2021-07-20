@@ -13,7 +13,29 @@ function main() {
     var op = isOperator(operator);
     // validate whole equation
     var validInput = isNumber(firstStr) && isOperator(operator) && isNumber(secondStr);
-    console.log(validInput);
+    // convert strings to numbers 
+    // calculate to solve problem
+    if (validInput) {
+        var firstNum_1 = parseInt(firstStr);
+        var secondNum_1 = parseInt(secondStr);
+        var result = calculate(firstNum_1, operator, secondNum_1);
+        console.log(result);
+    }
+    else {
+        console.log('\ninvalid input\n');
+    }
+}
+function calculate(firstNum, operator, secondNum) {
+    switch (operator) {
+        case '+':
+            return firstNum + secondNum;
+        case '-':
+            return firstNum - secondNum;
+        case '*':
+            return firstNum * secondNum;
+        case '/':
+            return firstNum / secondNum;
+    }
 }
 // to test if number inputs are numbers
 function isNumber(str) {

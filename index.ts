@@ -1,5 +1,7 @@
 import { question } from 'readline-sync';
 
+type Operator = '+' | '-' | '*' | '/';
+
 function main(): void {
     // ask for user inputs
     const firstStr: string =  question('Enter first number:\n')
@@ -15,7 +17,31 @@ function main(): void {
 
     // validate whole equation
     const validInput: boolean = isNumber(firstStr) && isOperator(operator) && isNumber(secondStr); 
-    console.log(validInput)
+    
+    // convert strings to numbers 
+    // calculate to solve problem
+    if (validInput) {
+
+        const firstNum: number = parseInt(firstStr);
+        const secondNum: number = parseInt(secondStr);
+        const result: number = calculate(firstNum, operator as Operator, secondNum)
+        console.log(result)
+    }  else {
+        console.log('\ninvalid input\n')
+    }
+}
+
+function calculate(firstNum: number, operator: Operator, secondNum: number) {
+    switch(operator){
+        case '+':
+            return firstNum + secondNum;
+        case '-':
+            return firstNum - secondNum;
+        case '*':
+            return firstNum * secondNum;
+        case '/':
+            return firstNum / secondNum;
+    }
 }
 
 // to test if number inputs are numbers
