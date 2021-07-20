@@ -9,12 +9,13 @@ function main(): void {
     // verify number inputs
     const firstNum = isNumber(firstStr)
     const secondNum = isNumber(secondStr)
-    // console.log(firstNum, secondNum)
-    
+  
     // verify operator
     const op = isOperator(operator)
-    console.log(op)
-    
+
+    // validate whole equation
+    const validInput: boolean = isNumber(firstStr) && isOperator(operator) && isNumber(secondStr); 
+    console.log(validInput)
 }
 
 // to test if number inputs are numbers

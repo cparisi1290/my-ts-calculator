@@ -9,10 +9,11 @@ function main() {
     // verify number inputs
     var firstNum = isNumber(firstStr);
     var secondNum = isNumber(secondStr);
-    // console.log(firstNum, secondNum)
     // verify operator
     var op = isOperator(operator);
-    console.log(op);
+    // validate whole equation
+    var validInput = isNumber(firstStr) && isOperator(operator) && isNumber(secondStr);
+    console.log(validInput);
 }
 // to test if number inputs are numbers
 function isNumber(str) {
