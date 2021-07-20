@@ -1,1 +1,8 @@
-console.log('writing in typescript')
+import { question } from 'readline-sync';
+
+function main(): void
+{
+    console.log(question);
+}
+
+main();
