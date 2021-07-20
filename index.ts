@@ -9,7 +9,12 @@ function main(): void {
     // verify number inputs
     const firstNum = isNumber(firstStr)
     const secondNum = isNumber(secondStr)
-    console.log(firstNum, secondNum)
+    // console.log(firstNum, secondNum)
+    
+    // verify operator
+    const op = isOperator(operator)
+    console.log(op)
+    
 }
 
 // to test if number inputs are numbers
@@ -19,6 +24,19 @@ function isNumber(str: string): boolean {
     // check to see if input is a number
     const isNum: boolean = !isNaN(maybeNum);
     return isNum;
+}
+
+// test to validate operator
+function isOperator(operator: string): boolean {
+    switch(operator) {
+        case '+': 
+        case '-': 
+        case '*': 
+        case '/': 
+            return true;
+        default: 
+            return false;
+    }   
 }
 
 main();
